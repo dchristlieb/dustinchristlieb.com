@@ -1,58 +1,181 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="viewport" content="width=1024">
-    <link rel="stylesheet" href="https://dustinchristlieb.com/styles.css">
+    <!-- Correct Viewport for Responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dustin Christlieb | Sr. Cloud Architect</title>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CNMKY87H40"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-CNMKY87H40');
-</script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNMKY87H40"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CNMKY87H40');
+    </script>
+</head>
 <body>
 
     <nav class="navbar">
-        <span class="menu-icon">&#9776; Menu</span>
-        <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="https://www.doit.com/author/dustin-christlieb/">Blog Posts</a></li>
-            <li><a href="https://www.linkedin.com/in/dustinchristlieb/">LinkedIn Profile</a></li>
-            <li><a href="https://github.com/dchristlieb">GitHub</a></li>
-        </ul>
+        <div class="container">
+            <a href="#home" class="nav-logo">Dustin Christlieb</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#credentials" class="nav-link">Certifications</a></li>
+                <li><a href="#credentials" class="nav-link">Education</a></li>
+                <li><a href="#connect" class="nav-link">Connect</a></li>
+                <li><a href="https://www.doit.com/author/dustin-christlieb/" target="_blank" rel="noopener noreferrer" class="nav-link external-link">Blog <i class="fas fa-external-link-alt"></i></a></li>
+            </ul>
+        </div>
     </nav>
 
-    <header>
-        <img src="https://dustinchristlieb.com/44646fa55856047a70487802aeb42a11.png" alt="Dustin Christlieb's Profile Picture" class="profile-picture">
-        <div class="header-content">
-            <h1>Dustin Christlieb</h1>
-            <p>Sr. Cloud Architect - Collaboration/Productivity</p>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                 <img src="https://dustinchristlieb.com/44646fa55856047a70487802aeb42a11.png" alt="Dustin Christlieb" class="profile-picture">
+                 <div class="hero-text">
+                    <h1>Dustin Christlieb</h1>
+                    <p class="subtitle">Sr. Cloud Architect - Collaboration & Productivity</p>
+                    <p class="tagline">Helping organizations optimize and secure their enterprise tech stacks.</p>
+                    <div class="hero-links">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#connect" class="btn btn-secondary">Connect</a>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section bg-light">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>Hello! I'm Dustin Christlieb, a Sr. Cloud Architect at <a href="https://DoiT.com" target="_blank" rel="noopener noreferrer">DoiT International</a>. My passion lies in architecting robust cloud solutions and assisting administrators in navigating the complexities of their enterprise technology, particularly focusing on collaboration and productivity suites like Google Workspace.</p>
+                <p>I thrive on problem-solving and continuously seek innovative ways to enhance security, efficiency, and user experience within cloud environments.</p>
+                <p>My key areas of expertise include Google Cloud Platform (GCP), Google Workspace Administration, Cloud Security, Scripting (GAM, Apps Script), Identity Management (IAM), Governance Risk and Compliance (GRC), and Mobile Device Management (MDM).</p>
+                <p>Check out my <a href="https://github.com/dchristlieb" target="_blank" rel="noopener noreferrer">GitHub profile</a> for more projects and code samples.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Featured Project</h2>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>DoiT AdminPulse for Workspace</h3>
+                        <p>A tool by DoiT International designed for Google Workspace Administrators to audit and improve their domain's security posture based on best practices. Built to simplify security management.</p>
+                        <p><strong>Technologies:</strong> Google Cloud Platform, Apps Script, Google Sheets, AdminSDK, and Policy API</p>
+                        <a href="https://adminpulse.doit.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit AdminPulse <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                 <p class="more-projects-link">Explore more of my general work on <a href="https://github.com/dchristlieb" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+            </div>
+        </section>
+
+        <!-- Combined Credentials Section -->
+        <section id="credentials" class="section bg-light">
+            <div class="container">
+                <div class="credentials-container">
+
+                    <!-- Certifications Column -->
+                    <div class="certifications-column">
+                        <h2>Certifications</h2>
+                        <ul class="certifications-list">
+                            <li>
+                                <img src="https://images.credly.com/size/60x60/images/5343b652-c9a0-418e-bfaf-7ed5a2ddd0c4/blob" alt="CompTIA Security+ Logo" class="cert-logo">
+                                <div class="cert-details">
+                                   <strong>CompTIA Security+ ce Certification</strong> - CompTIA
+                                   <a href="https://www.credly.com/badges/319a0005-8d8f-403f-b3bb-36bf3ee7b03c/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-verify-link">(Verify)</a>
+                                </div>
+                            </li>
+                            <li>
+                                 <img src="https://images.credly.com/size/60x60/images/71c579e0-51fd-4247-b493-d2fa8167157a/image.png" alt="Professional Cloud Architect Logo" class="cert-logo">
+                                 <div class="cert-details">
+                                    <strong>Google Cloud Certified - Professional Cloud Architect</strong> - Google Cloud
+                                    <a href="https://www.credly.com/badges/f7e6b6a9-9a29-44c3-9f65-ec075deafbf2/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-verify-link">(Verify)</a>
+                                 </div>
+                            </li>
+                            <li>
+                                 <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/134083458" alt="Professional ChromeOS Administrator Logo" class="cert-logo">
+                                 <div class="cert-details">
+                                    <strong>Professional ChromeOS Administrator</strong> - Google
+                                    <a href="https://chromeenterprisecertified.accredible.com/d09d8079-e409-49b4-88f5-b3829403aaf9#acc.LdAorgX4" target="_blank" rel="noopener noreferrer" class="cert-verify-link">(Verify)</a>
+                                 </div>
+                            </li>
+                            <li>
+                                 <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/85758806" alt="Google Workspace Administrator Logo" class="cert-logo">
+                                 <div class="cert-details">
+                                    <strong>Google Workspace Administrator</strong> - Google
+                                    <a href="https://google.accredible.com/d369561e-5d4d-4536-b56a-462694522f3f#acc.QIVnBKb9" target="_blank" rel="noopener noreferrer" class="cert-verify-link">(Verify)</a>
+                                 </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Education Column -->
+                    <div class="education-column">
+                        <h2>Education</h2>
+                        <ul class="education-list">
+                            <li>
+                                <i class="fas fa-graduation-cap education-icon"></i>
+                                <div class="education-details">
+                                    <strong>Associate in Applied Science (A.A.S.), Cyber Security Operations</strong>
+                                    Glendale Community College
+                                    <span class="education-date">January 2019 - May 2023</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="connect" class="section">
+            <div class="container text-center">
+                <h2>Let's Connect</h2>
+                <p>Find me on the web:</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/dustinchristlieb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/dchristlieb" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.doit.com/author/dustin-christlieb/" target="_blank" rel="noopener noreferrer" aria-label="Blog Posts">
+                        <i class="fas fa-blog"></i> Blog Posts
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© <span id="current-year"></span> Dustin Christlieb. All rights reserved.</p>
         </div>
-    </header>
-
-    <section id="bio">
-        <p>Hello! My name is Dustin Christlieb. I work as a Sr. Cloud Architect at <a href="https://DoiT.com" target="_blank">DoiT International.</a> I enjoy helping administrators with their enterprise tech stacks and solving issues!</p>
-        <p>I am also a Volunteer Google Workspace Product Expert, answering questions in the <a href="https://support.google.com/a/threads" target="_blank">Google Workspace Support Community</a>.</p>
-        <p>Check out my <a href="https://github.com/dchristlieb" target="_blank">GitHub profile</a> for more projects.</p>
-    </section>
-
-    <section id="currentProject">
-        <p>If you are a Google Workspace Admin, audit your security posture with the FREE Security Checklist app for Workspace Admins. Checkout the project at <a href="https://workspacesecurity.app" target="_blank">WorkspaceSecurity.app</a> for more info.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Dustin Christlieb</p>
     </footer>
 
-    <script src="https://dustinchristlieb.com/script.js"></script>
-
+    <!-- Link to JS file -->
+    <script src="script.js"></script>
 </body>
 </html>
