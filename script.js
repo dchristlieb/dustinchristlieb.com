@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    let allCertifications = []; // Store all certifications globally
+
     // === Mobile Navigation Toggle ===
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -60,6 +62,76 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // === Render Certifications Function ===
+    function renderCertifications(filterVendor = 'All') {
+        const certificationsList = document.querySelector('.certifications-list');
+        if (!certificationsList) return;
+
+        certificationsList.innerHTML = ''; // Clear existing content
+
+        const filteredCerts = (filterVendor === 'All')
+            ? allCertifications
+            : allCertifications.filter(cert => cert.issuer === filterVendor);
+
+        filteredCerts.forEach(cert => {
+            const listItem = document.createElement('li');
+
+            const logoImg = document.createElement('img');
+            logoImg.src = cert.logo;
+            logoImg.alt = `${cert.name} Logo`;
+            logoImg.classList.add('cert-logo');
+            if (cert.isSquareLogo) {
+                logoImg.classList.add('square-logo');
+            }
+
+            const certDetailsDiv = document.createElement('div');
+            certDetailsDiv.classList.add('cert-details');
+
+            const strongName = document.createElement('strong');
+            strongName.textContent = `${cert.name} - ${cert.issuer}`;
+
+            const verifyLink = document.createElement('a');
+            verifyLink.href = cert.verifyLink;
+            verifyLink.target = '_blank';
+            verifyLink.rel = 'noopener noreferrer';
+            verifyLink.classList.add('cert-verify-link');
+            verifyLink.textContent = '(Verify)';
+
+            certDetailsDiv.appendChild(strongName);
+            certDetailsDiv.appendChild(verifyLink);
+
+            listItem.appendChild(logoImg);
+            listItem.appendChild(certDetailsDiv);
+
+            certificationsList.appendChild(listItem);
+        });
+    }
+
+    // === Load Certifications Data Once and Initialize Display ===
+    function loadCertificationsData() {
+        fetch('certifications.json')
+            .then(response => response.json())
+            .then(data => {
+                allCertifications = data; // Store the fetched data
+                renderCertifications('All'); // Render all by default
+            })
+            .catch(error => console.error('Error loading certifications data:', error));
+    }
+
+    // === Filter Button Event Listeners ===
+    const filterButtons = document.querySelectorAll('.vendor-filter-buttons .filter-btn');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove 'active' class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add 'active' class to the clicked button
+            this.classList.add('active');
+
+            const vendor = this.dataset.vendor; // Get the vendor name from data-vendor attribute
+            renderCertifications(vendor);
+        });
+    });
+
 
     // === Update Footer Year ===
     const currentYearSpan = document.getElementById('current-year');
@@ -67,35 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
-    // === Optional: Add active class to nav link on scroll ===
-    // This is more complex and involves monitoring scroll position.
-    // Consider using Intersection Observer API for better performance if needed.
-    // Example (basic version):
-    /*
-    const sections = document.querySelectorAll('main section[id]'); // Get sections with IDs
-
-    window.addEventListener('scroll', navHighlighter);
-
-    function navHighlighter() {
-      let scrollY = window.pageYOffset;
-
-      sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - (document.querySelector('.navbar').offsetHeight + 50); // Adjust offset
-        const sectionId = current.getAttribute('id');
-
-        const navLink = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
-
-        if (navLink) { // Check if the nav link exists
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-              navLink.classList.add('active');
-            } else {
-              navLink.classList.remove('active');
-            }
-        }
-      });
-    }
-    */
-
+    // Initial load of certifications data
+    loadCertificationsData();
 
 }); // End DOMContentLoaded

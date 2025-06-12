@@ -342,6 +342,31 @@ p {
      text-align: center;
 }
 
+/* Vendor Filter Buttons */
+.vendor-filter-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to next line */
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 30px;
+}
+
+.vendor-filter-buttons .btn {
+    padding: 8px 18px; /* Slightly smaller padding for filter buttons */
+    font-size: 0.9rem;
+}
+
+.vendor-filter-buttons .btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+.vendor-filter-buttons .btn.active:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+
 /* Common styles for list items acting as cards */
 .certifications-list li,
 .education-list li {
@@ -363,44 +388,46 @@ p {
 /* Certifications Specific List Styles */
 .certifications-list {
     margin: 0 auto;
-    /* padding: 0; Already reset */
+    /* FLEXBOX LAYOUT FOR CERTIFICATIONS */
+    display: flex; /* Change from grid to flex */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items in the container */
+    gap: 20px; /* Space between flex items */
+    padding: 0; /* Ensure no default padding from ul */
+}
+.certifications-list li {
+    flex: 1 1 300px; /* Allow items to grow/shrink, with a base width of 300px */
+    max-width: 350px; /* Optional: Limit max width for larger screens */
+    margin-bottom: 0; /* Remove individual margin as gap handles spacing */
+    flex-direction: column; /* Stack logo and text vertically within the card */
+    text-align: center;
+    align-items: center;
 }
 
-/* Education Specific List Styles */
-.education-list {
-    margin: 0 auto;
-    /* padding: 0; Already reset */
-}
-.education-list li {
-    /* Overrides/Specifics for the single education card */
-    padding: 25px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /* Logo/Icon Styles */
 .cert-logo {
-    width: 60px;  
-    height: 60px; 
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     flex-shrink: 0;
-    background-color: #fff; 
-    border-radius: 50%;     
-    padding: 2px;        
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 2px;
     border: 1px solid var(--border-color);
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Space between logo and text in grid item */
 }
 
 .cert-logo.square-logo {
-    border-radius: 5px; 
+    border-radius: 5px;
     /* If you prefer perfectly square, use: border-radius: 0; */
 }
 
 .education-icon {
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
     color: var(--primary-color);
-    min-width: 40px; 
+    min-width: 40px;
     text-align: center;
     flex-shrink: 0;
 }
@@ -540,14 +567,18 @@ p {
     /* Social Link Adjustments */
     #connect .social-links a { margin: 0 10px 15px; font-size: 1rem; }
     #connect .social-links i { font-size: 1.4rem; }
+
+    /* Certifications Flexbox Adjustments for smaller screens */
+    .certifications-list li {
+        flex: 1 1 250px; /* Adjust min width for smaller screens */
+        padding: 15px;
+    }
 }
 
 /* Smaller Mobile Screens */
 @media (max-width: 480px) {
-    .certifications-list li,
-    .education-list li {
-        gap: 15px;
-        padding: 15px;
+    .certifications-list li {
+        flex: 1 1 100%; /* Single column on very small screens */
     }
     .cert-logo { width: 45px; height: 45px; }
     .education-icon { font-size: 2rem; min-width: 30px; }
