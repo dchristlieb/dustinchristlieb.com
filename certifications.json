@@ -1,12 +1,5 @@
 [
   {
-    "name": "CompTIA SecurityX ce Certification",
-    "issuer": "CompTIA",
-    "logo": "https://images.credly.com/size/60x60/images/5343b652-c9a0-418e-bfaf-7ed5a2ddd0c4/blob",
-    "verifyLink": "https://www.credly.com/badges/319a0005-8d8f-403f-b3bb-36bf3ee7b03c/linked_in_profile",
-    "isSquareLogo": false
-  },
-  {
     "name": "Google Cloud Certified - Professional Cloud Architect",
     "issuer": "Google",
     "logo": "https://images.credly.com/size/60x60/images/71c579e0-51fd-4247-b493-d2fa8167157a/image.png",
@@ -49,10 +42,10 @@
     "isSquareLogo": false
   },
   {
-    "name": "CompTIA Security Analytics Expert – CSAE Stackable Certification",
-    "issuer": "CompTIA",
-    "logo": "https://images.credly.com/size/340x340/images/93d16d4a-223f-41bd-aaad-6a491b7b1fa8/CompTIA_CSAE.png",
-    "verifyLink": "https://www.credly.com/badges/d27e26fa-79fb-4799-8c9c-b2b5c5300f28",
+    "name": "JumpCloud Core Certification for Partners",
+    "issuer": "JumpCloud",
+    "logo": "https://images.credly.com/size/340x340/images/719c8eb6-a1b7-41c3-95df-caee2fabc5b0/image.png",
+    "verifyLink": "https://university.jumpcloud.com/certificates/qmohv2y7av",
     "isSquareLogo": false
   },
   {
@@ -61,13 +54,6 @@
     "logo": "https://images.credly.com/size/340x340/images/9d11d2c7-69c0-4de1-8d56-da3144ae9114/blob",
     "verifyLink": "https://www.credly.com/badges/62e44a5b-0958-4dd4-bab4-1bc8cd34f949/linked_in_profile",
     "isSquareLogo": true
-  },
-  {
-    "name": "JumpCloud Core Certification for Partners",
-    "issuer": "JumpCloud",
-    "logo": "https://images.credly.com/size/340x340/images/719c8eb6-a1b7-41c3-95df-caee2fabc5b0/image.png",
-    "verifyLink": "https://university.jumpcloud.com/certificates/qmohv2y7av",
-    "isSquareLogo": false
   },
   {
     "name": "Jamf Certified Associate - Jamf Pro",
@@ -83,6 +69,20 @@
     "verifyLink": "https://cc.sj-cdn.net/certificate/2vw111zyzhgiu/certificate-74zk2x4n2h5g-1721695223.jpg?Expires=1749687746&Signature=PnuwpvyR6xO5KzkTb3vjKku9D5IrEm2ecW7wQ~XwzNj-uM950F5QWM3zstCiNW9x6EAtG2ZDDF~SaJPhjdm52Yf3l8BBZrTieIbZUvxH~OiC0uNzo4QnUql7brmEQtWZkuCGcmmi693fMQQaJZJWTEvbrBfhghVqW8Gwu2woMmkiCAWYSnpIAcZNreKN15p13krXUzfDVUrH8doS5yz~Hj32hTt~36hbsynQD1ENMGnN-xl3JVHKep0FewEacOFgAdlopMWO86UQc7iVFqdTgg6txdZxyuw3pkX2VDJrm288k9CV17XQpPgtFaz6GfL963w4eVjw59XwBC5EZZeDzg__&Key-Pair-Id=APKAI3B7HFD2VYJQK4MQ",
     "isSquareLogo": true
   },
+  {
+    "name": "CompTIA SecurityX ce Certification",
+    "issuer": "CompTIA",
+    "logo": "https://images.credly.com/size/340x340/images/5343b652-c9a0-418e-bfaf-7ed5a2ddd0c4/blob",
+    "verifyLink": "https://www.credly.com/badges/319a0005-8d8f-403f-b3bb-36bf3ee7b03c/linked_in_profile",
+    "isSquareLogo": false
+  },
+  {
+    "name": "CompTIA Security Analytics Expert – CSAE Stackable Certification",
+    "issuer": "CompTIA",
+    "logo": "https://images.credly.com/size/340x340/images/93d16d4a-223f-41bd-aaad-6a491b7b1fa8/CompTIA_CSAE.png",
+    "verifyLink": "https://www.credly.com/badges/d27e26fa-79fb-4799-8c9c-b2b5c5300f28",
+    "isSquareLogo": false
+  },  
   {
     "name": "CompTIA CySA+ ce Certification",
     "issuer": "CompTIA",
