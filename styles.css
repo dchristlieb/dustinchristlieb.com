@@ -302,7 +302,6 @@ p {
     max-width: 700px;
     width: 100%;
     border: 1px solid var(--border-color);
-    /* display: flex; flex-direction: column; align-items: center; are defaultish */
 }
 
 .project-card h3 {
@@ -342,8 +341,71 @@ p {
      text-align: center;
 }
 
-/* Common styles for list items acting as cards */
-.certifications-list li,
+/* Vendor Filter Buttons */
+.vendor-filter-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to next line */
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 30px;
+}
+
+.vendor-filter-buttons .btn {
+    padding: 8px 18px; /* Slightly smaller padding for filter buttons */
+    font-size: 0.9rem;
+}
+
+.vendor-filter-buttons .btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+.vendor-filter-buttons .btn.active:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* === NEW LOGO-GRID STYLES === */
+.certifications-list {
+    display: grid;
+    /* This creates a responsive grid that will try to fit 3 columns
+       if each column is at least 150px wide. It will automatically adjust. */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 40px; /* Increased gap for better spacing */
+    align-items: center;
+    justify-items: center;
+    padding-top: 20px;
+}
+
+/* Remove default list item styles */
+.certifications-list li {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cert-logo {
+    width: 130px;
+    height: 130px;
+    object-fit: contain; /* Prevents logos from stretching */
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 8px; /* Padding inside the border */
+    border: 2px solid var(--border-color);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.cert-logo:hover {
+    text-decoration: none; /* Remove underline from image link */
+    transform: scale(1.1); /* "Pop" effect */
+    box-shadow: 0 0 25px rgba(0, 160, 160, 0.6); /* Glow effect */
+}
+
+.cert-logo.square-logo {
+    border-radius: 20px;
+}
+
+/* === EDUCATION STYLES (UNCHANGED) === */
 .education-list li {
     margin-bottom: 20px;
     display: flex;
@@ -354,84 +416,29 @@ p {
     border-radius: var(--border-radius);
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
-.certifications-list li:hover,
 .education-list li:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Certifications Specific List Styles */
-.certifications-list {
-    margin: 0 auto;
-    /* padding: 0; Already reset */
-}
-
-/* Education Specific List Styles */
-.education-list {
-    margin: 0 auto;
-    /* padding: 0; Already reset */
-}
-.education-list li {
-    /* Overrides/Specifics for the single education card */
-    padding: 25px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Logo/Icon Styles */
-.cert-logo {
-    width: 60px;  
-    height: 60px; 
-    object-fit: contain;
-    flex-shrink: 0;
-    background-color: #fff; 
-    border-radius: 50%;     
-    padding: 2px;        
-    border: 1px solid var(--border-color);
-    box-sizing: border-box; 
-}
-
-.cert-logo.square-logo {
-    border-radius: 5px; 
-    /* If you prefer perfectly square, use: border-radius: 0; */
-}
-
 .education-icon {
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
     color: var(--primary-color);
-    min-width: 40px; 
+    min-width: 40px;
     text-align: center;
     flex-shrink: 0;
 }
 
-/* Text Detail Styles */
-.cert-details,
 .education-details {
     flex-grow: 1;
     line-height: 1.5;
 }
-.cert-details strong,
+
 .education-details strong {
     color: var(--heading-color);
     display: block;
     margin-bottom: 4px;
     font-size: 1.05rem;
-}
-
-.cert-verify-link {
-    margin-left: 5px;
-    font-size: 0.85em;
-    color: var(--text-color);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--text-color);
-    transition: color var(--transition-speed), border-bottom-color var(--transition-speed);
-    white-space: nowrap;
-}
-.cert-verify-link:hover {
-    color: var(--primary-color);
-    border-bottom-color: var(--primary-color);
-    text-decoration: none;
 }
 
 .education-date {
@@ -482,7 +489,7 @@ p {
 
 /* === Responsive Design === */
 
-/* Medium Screens & Down (Tablet/Mobile Nav) */
+/* Medium Screens & Down (Tablet) */
 @media (max-width: 768px) {
     html {
         font-size: 15px;
@@ -493,6 +500,11 @@ p {
 
     .container { padding: 0 15px; }
     .section { padding: 40px 0; }
+    
+    .cert-logo {
+        width: 110px;
+        height: 110px;
+    }
 
     /* Mobile Navigation */
     .nav-toggle { display: block; z-index: 1001; }
@@ -513,8 +525,7 @@ p {
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
         transition: right var(--transition-speed);
         overflow-y: auto;
-        /* Reset flex alignment from desktop */
-        display: flex; /* Ensure it's flex for direction */
+        display: flex;
     }
     .nav-menu.active { right: 0; }
     .nav-menu li {
@@ -544,15 +555,12 @@ p {
 
 /* Smaller Mobile Screens */
 @media (max-width: 480px) {
-    .certifications-list li,
-    .education-list li {
-        gap: 15px;
-        padding: 15px;
+    .cert-logo {
+        width: 90px;
+        height: 90px;
     }
-    .cert-logo { width: 45px; height: 45px; }
     .education-icon { font-size: 2rem; min-width: 30px; }
 
-    .cert-details strong,
     .education-details strong {
        font-size: 1rem;
     }
@@ -573,7 +581,6 @@ p {
     .education-list li {
         margin-left: 0;
         margin-right: 0;
-        /* max-width: none; /* Uncomment if you want edu card to fill column */
     }
     .certifications-column h2,
     .education-column h2 {
