@@ -449,6 +449,41 @@ p {
     opacity: 0.8;
 }
 
+/* === Associations Section === */
+.associations-list li {
+    margin-bottom: 20px;
+    background-color: var(--surface-color);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.associations-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.association-details strong {
+    color: var(--heading-color);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.05rem;
+}
+
+.association-role {
+    display: block;
+    font-size: 0.9em;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.association-date {
+    display: block;
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
 /* === Connect Section === */
 #connect .social-links {
     margin-top: 20px;

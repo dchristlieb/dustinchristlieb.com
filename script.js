@@ -127,4 +127,45 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initial load of certifications data
     loadCertificationsData();
 
+    // === Load Associations Data ===
+    function loadAssociationsData() {
+        fetch('associations.json')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    const associationsSection = document.getElementById('associations');
+                    const associationsNav = document.querySelector('a[href="#associations"]');
+                    if (associationsSection && associationsNav) {
+                        associationsSection.style.display = 'block';
+                        associationsNav.style.display = 'block';
+                        renderAssociations(data);
+                    }
+                }
+            })
+            .catch(error => console.error('Error loading associations data:', error));
+    }
+
+    // === Render Associations Function ===
+    function renderAssociations(associations) {
+        const associationsList = document.querySelector('.associations-list');
+        if (!associationsList) return;
+
+        associationsList.innerHTML = ''; // Clear existing content
+
+        associations.forEach(assoc => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <div class="association-details">
+                    <strong>${assoc.name}</strong>
+                    <span class="association-role">${assoc.role}</span>
+                    <span class="association-date">${assoc.date}</span>
+                </div>
+            `;
+            associationsList.appendChild(listItem);
+        });
+    }
+
+    // Initial load of associations data
+    loadAssociationsData();
+
 });
