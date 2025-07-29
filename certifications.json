@@ -131,5 +131,12 @@
     "logo": "https://images.credly.com/size/340x340/images/f6d62c5d-1e1d-4de6-92ee-8dc8c80b1c7b/blob",
     "verifyLink": "https://www.credly.com/earner/earned/badge/7b406eb9-3637-419e-bb6d-d521ab22709c",
     "isSquareLogo": false
+  },
+  {
+    "name": "AWS Certified Cloud Practitioner",
+    "issuer": "Amazon Web Services (AWS)",
+    "logo": "https://images.credly.com/size/60x60/images/00634f82-b07f-4bbd-a6bb-53de397fd3a0/image.png",
+    "verifyLink": "https://www.credly.com/badges/3c441686-7809-4f64-b36a-07bf511489f9",
+    "isSquareLogo": false
   }
 ]
