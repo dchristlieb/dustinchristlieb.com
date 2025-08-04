@@ -168,4 +168,17 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initial load of associations data
     loadAssociationsData();
 
+    // === Scroll to Top Button Logic ===
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+    }
+
 });

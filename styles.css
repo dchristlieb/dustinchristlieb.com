@@ -41,6 +41,9 @@ body {
     color: var(--text-color);
     line-height: 1.7;
     overflow-x: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-y: scroll;
 }
 
 main {
@@ -302,6 +305,12 @@ p {
     max-width: 700px;
     width: 100%;
     border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 160, 160, 0.15);
 }
 
 .project-card h3 {
@@ -491,7 +500,7 @@ p {
 #connect .social-links a {
     display: inline-block;
     margin: 0 15px 10px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-color);
     transition: color var(--transition-speed), transform var(--transition-speed);
 }
@@ -502,7 +511,7 @@ p {
 }
 #connect .social-links i {
     margin-right: 8px;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     vertical-align: middle;
 }
 
@@ -515,6 +524,41 @@ p {
     margin-top: 40px;
     font-size: 0.9rem;
     border-top: 1px solid var(--border-color);
+}
+
+/* === Scroll to Top Button === */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s, visibility 0.4s, transform 0.4s, background-color 0.3s;
+    z-index: 1000;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-decoration: none;
 }
 
 /* === Section Background Alternation === */
