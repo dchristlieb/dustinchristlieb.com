@@ -241,7 +241,7 @@ p {
 /* === Hero Section === */
 .hero {
     background-color: var(--background-color);
-    min-height: calc(90vh - var(--header-height));
+    min-height: calc(60vh - var(--header-height));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,6 +253,12 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.linkedin-badge {
+    margin-bottom: 2rem;
+    transform: scale(1.2);
 }
 
 .profile-picture {
@@ -280,7 +286,11 @@ p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
 }
-.hero-links { margin-top: 1.5rem; }
+.hero-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
 
 
 /* === Project Section === */
