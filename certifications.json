@@ -35,13 +35,6 @@
     "isSquareLogo": true
   },
   {
-    "name": "BetterCloud Certified Administrator",
-    "issuer": "BetterCloud",
-    "logo": "https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/28617637",
-    "verifyLink": "https://www.credential.net/74d03c97-2e6e-41c2-9968-23c4d73c1aa0",
-    "isSquareLogo": false
-  },
-  {
     "name": "JumpCloud Core Certification for Partners",
     "issuer": "JumpCloud",
     "logo": "https://images.credly.com/size/340x340/images/719c8eb6-a1b7-41c3-95df-caee2fabc5b0/image.png",

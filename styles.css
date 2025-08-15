@@ -525,17 +525,6 @@ p {
     vertical-align: middle;
 }
 
-/* === Footer === */
-.footer {
-    background-color: var(--surface-color);
-    color: var(--text-color);
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    font-size: 0.9rem;
-    border-top: 1px solid var(--border-color);
-}
-
 /* === Scroll to Top Button === */
 .scroll-to-top {
     position: fixed;
@@ -675,4 +664,9 @@ p {
     .education-column h2 {
          text-align: left;
     }
+}
+
+#connect img {
+    height: 50px;
+    margin: 20px auto 0;
 }
