@@ -44,14 +44,14 @@
   {
     "name": "Jamf Certified Associate - Jamf Protect",
     "issuer": "Jamf",
-    "logo": "https://images.credly.com/size/340x340/images/9d11d2c7-69c0-4de1-8d56-da3144ae9114/blob",
+    "logo": "https://images.credly.com/size/680x680/images/e2e9c910-ac0c-447f-9d89-da362aec6203/blob",
     "verifyLink": "https://www.credly.com/badges/62e44a5b-0958-4dd4-bab4-1bc8cd34f949/linked_in_profile",
     "isSquareLogo": true
   },
   {
     "name": "Jamf Certified Associate - Jamf Pro",
     "issuer": "Jamf",
-    "logo": "https://images.credly.com/size/340x340/images/137246f7-e9ed-4b4e-a887-56199f7db053/blob",
+    "logo": "https://images.credly.com/size/680x680/images/62bbd4cd-0ef3-450d-9d9b-160676e9dc47/blob",
     "verifyLink": "https://www.credly.com/badges/30d3b20b-8dd4-424b-b0cc-21373ef26c89",
     "isSquareLogo": true
   },
@@ -70,12 +70,12 @@
     "isSquareLogo": false
   },
   {
-    "name": "CompTIA Security Analytics Expert – CSAE Stackable Certification",
+    "name": "CompTIA Security Analytics Expert \u2013 CSAE Stackable Certification",
     "issuer": "CompTIA",
     "logo": "https://images.credly.com/size/340x340/images/93d16d4a-223f-41bd-aaad-6a491b7b1fa8/CompTIA_CSAE.png",
     "verifyLink": "https://www.credly.com/badges/d27e26fa-79fb-4799-8c9c-b2b5c5300f28",
     "isSquareLogo": false
-  },  
+  },
   {
     "name": "CompTIA CySA+ ce Certification",
     "issuer": "CompTIA",
@@ -84,21 +84,21 @@
     "isSquareLogo": false
   },
   {
-    "name": "CompTIA Security Analytics Professional – CSAP Stackable Certification",
+    "name": "CompTIA Security Analytics Professional \u2013 CSAP Stackable Certification",
     "issuer": "CompTIA",
     "logo": "https://images.credly.com/size/340x340/images/ba1b8072-8ebe-432c-88e5-05bc809c624a/CompTIA_CSAP.png",
     "verifyLink": "https://www.credly.com/badges/ec084035-cf8c-471c-983d-37dc7574bf07",
     "isSquareLogo": false
   },
   {
-    "name": "CompTIA Secure Infrastructure Specialist – CSIS Stackable Certification",
+    "name": "CompTIA Secure Infrastructure Specialist \u2013 CSIS Stackable Certification",
     "issuer": "CompTIA",
     "logo": "https://images.credly.com/size/340x340/images/8090280a-311f-425f-a1cd-a32770b5a444/CompTIA_CSIS.png",
     "verifyLink": "https://www.credly.com/badges/45e3176b-8296-4330-88be-e4f817d1228d",
     "isSquareLogo": false
   },
   {
-    "name": "CompTIA IT Operations Specialist – CIOS Stackable Certification",
+    "name": "CompTIA IT Operations Specialist \u2013 CIOS Stackable Certification",
     "issuer": "CompTIA",
     "logo": "https://images.credly.com/size/340x340/images/7f7657b9-4d1b-4b8d-b5ee-5fdf6d7ccd71/04294_CompTIA_Cert_Badges_Specialist_-_CIOS.png",
     "verifyLink": "https://www.credly.com/badges/8cae17b5-44d8-4e63-99e5-540c186f9eb0/linked_in_profile",
