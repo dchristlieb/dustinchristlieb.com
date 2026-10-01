@@ -95,7 +95,14 @@
     <main>
         <section id="home" class="hero">
             <div class="container hero-content">
-                 <div class="badge-base LI-profile-badge linkedin-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="dustinchristlieb" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/dustinchristlieb?trk=profile-badge"></a></div>
+                 <a class="linkedin-card" href="https://www.linkedin.com/in/dustinchristlieb" target="_blank" rel="noopener noreferrer" aria-label="Dustin Christlieb on LinkedIn (opens in a new tab)">
+                     <img class="hero-avatar" src="44646fa55856047a70487802aeb42a11.png" alt="Dustin Christlieb" width="300" height="300">
+                     <span class="linkedin-card-meta">
+                         <strong>Dustin Christlieb</strong>
+                         <span class="linkedin-handle">in/dustinchristlieb</span>
+                     </span>
+                     <i class="fab fa-linkedin linkedin-card-icon" aria-hidden="true"></i>
+                 </a>
                  <div class="hero-text">
                     <div class="hero-links">
                         <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -117,6 +124,7 @@
         <section id="projects" class="section">
             <div class="container">
                 <h2>Featured Projects</h2>
+                <div class="project-track" tabindex="0" role="group" aria-label="Featured projects, scroll horizontally">
                 <div class="project-card">
                     <div class="project-content">
                         <h3>DoiT AdminPulse for Workspace</h3>
@@ -127,6 +135,15 @@
                         <a href="https://adminpulse.doit.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit AdminPulse <i class="fas fa-external-link-alt"></i></a>
                         <a href="https://github.com/doitintl/DoiT-AdminPulse-for-Workspace" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View Code <i class="fab fa-github"></i></a>
                     </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>E350 Travel Hub</h3>
+                        <p>A living build log and travel hub for converting a Ford E350 shuttle bus into an off-grid home on wheels — vehicle specs, solar and battery systems, build-out plans, destination guides, an event calendar, and budget tracking for full-time road travel with one dog.</p>
+                        <p><strong>Technologies:</strong> Jekyll, Cloudflare Pages, Cloudflare Workers, D1, R2, and Access.</p>
+                        <a href="https://e350-travel.pages.dev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit the Hub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
                 </div>
                  <p class="more-projects-link">Explore more of my general work on <a href="https://github.com/dchristlieb" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
             </div>
@@ -160,7 +177,7 @@
                                 <div class="education-details">
                                     <strong>Bachelor of Science (B.S.), Information Technology</strong>
                                     Western Governors University
-                                    <span class="education-date">July 2025 - Dec 2025 (Expected)</span>
+                                    <span class="education-date">July 2025 - December 2025</span>
                                 </div>
                             </li>
                             <li>
@@ -217,7 +234,6 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <script src="script.js"></script>
 </body>
 </html>

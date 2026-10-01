@@ -256,42 +256,79 @@ p {
     justify-content: center;
 }
 
-.linkedin-badge {
+/* === LinkedIn Hero Card ===
+   Replaces the embedded LI profile badge, which LinkedIn discontinues on
+   12/12/2026. Static markup + the local og:image, so nothing depends on
+   platform.linkedin.com and the hero survives an ad blocker. */
+.linkedin-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 28px 40px;
     margin-bottom: 2rem;
-    transform: scale(1.2);
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    text-decoration: none;
+    transition: transform var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+.linkedin-card:hover,
+.linkedin-card:focus-visible {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 28px rgba(0, 160, 160, 0.22);
+    text-decoration: none;
 }
 
-.profile-picture {
-    width: 180px;
-    height: 180px;
+.hero-avatar {
+    width: 168px;
+    height: 168px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 25px;
-    border: 5px solid var(--surface-color);
-    box-shadow: var(--box-shadow);
+    border: 3px solid var(--primary-color);
+}
+
+.linkedin-card-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    line-height: 1.4;
+}
+.linkedin-card-meta strong {
+    color: var(--heading-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.linkedin-handle {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.linkedin-card-icon {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    font-size: 1.4rem;
+    color: #0a66c2;
+    transition: transform var(--transition-speed);
+}
+.linkedin-card:hover .linkedin-card-icon {
+    transform: scale(1.15);
 }
 
 .hero-text {
     max-width: 700px;
 }
 
-.hero h1 { margin-bottom: 0.5rem; }
-.hero .subtitle {
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-.hero .tagline {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
 .hero-links {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
 }
-
 
 /* === Project Section === */
 #projects .container {
@@ -302,18 +339,49 @@ p {
 
 #projects h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 12px;
+}
+
+/* Horizontal scroll track. Bleeds past the container so the second card
+   peeks in, signalling scrollability on desktop. */
+.project-track {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 8px 20px 34px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: var(--primary-color) var(--surface-color);
+}
+.project-track:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: 12px;
+}
+
+/* Edge fade so cut-off content reads as "more this way". */
+.project-track::-webkit-scrollbar {
+    height: 8px;
+}
+.project-track::-webkit-scrollbar-track {
+    background: var(--surface-color);
+    border-radius: 4px;
+}
+.project-track::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 4px;
 }
 
 .project-card {
+    flex: 0 0 min(88%, 700px);
+    scroll-snap-align: center;
     background-color: var(--surface-color);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 30px;
-    margin-bottom: 30px;
     text-align: center;
-    max-width: 700px;
-    width: 100%;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -620,11 +688,11 @@ p {
 
     /* Hero Adjustments */
     .hero { min-height: auto; padding: 60px 0; }
-    .profile-picture { width: 140px; height: 140px; }
-    .hero h1 { margin-top: 1rem; }
+    .linkedin-card { padding: 24px 32px; width: 100%; }
+    .hero-avatar { width: 132px; height: 132px; }
 
     /* Project Card Padding */
-     .project-card { padding: 20px; }
+     .project-card { padding: 20px; flex-basis: min(92%, 700px); }
 
     /* Social Link Adjustments */
     #connect .social-links a { margin: 0 10px 15px; font-size: 1rem; }
