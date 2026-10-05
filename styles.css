@@ -88,6 +88,9 @@ img { max-width: 100%; height: auto; display: block; }
 ul { list-style: none; }
 button { font-family: inherit; }
 
+/* Ensure the HTML hidden attribute wins over component display rules. */
+[hidden] { display: none !important; }
+
 a {
     color: var(--accent-2);
     text-decoration: none;
