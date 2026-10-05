@@ -738,3 +738,8 @@ p {
     height: 50px;
     margin: 20px auto 0;
 }
+
+/* Fix: Ensure palette overlay respects the hidden attribute */
+.palette-overlay[hidden] {
+    display: none !important;
+}
