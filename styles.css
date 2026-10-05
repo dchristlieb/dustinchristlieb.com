@@ -743,3 +743,8 @@ p {
 .palette-overlay[hidden] {
     display: none !important;
 }
+
+/* Fix: Ensure palette overlay respects the hidden attribute */
+.palette-overlay[hidden] {
+    display: none !important;
+}
