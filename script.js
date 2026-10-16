@@ -515,30 +515,63 @@
         vendors.forEach(([v, n]) => vendorFilter.appendChild(mk(vendorLabel(v), v, n, activeVendor === v)));
     }
 
+    let certSearchQuery = '';
+    let certSort = 'vendor';
+
     function renderCerts(animate) {
         if (!certGrid) return;
-        const list = activeVendor === null ? allCerts : allCerts.filter(c => c.issuer === activeVendor);
+        let list = activeVendor === null ? allCerts.slice() : allCerts.filter(c => c.issuer === activeVendor);
+        if (certSearchQuery) {
+            const q = certSearchQuery.toLowerCase();
+            list = list.filter(c => c.name.toLowerCase().includes(q) || c.issuer.toLowerCase().includes(q));
+        }
+        if (certSort === 'name') list.sort((a, b) => a.name.localeCompare(b.name));
+        else list.sort((a, b) => a.issuer.localeCompare(b.issuer) || a.name.localeCompare(b.name));
         certGrid.innerHTML = '';
         list.forEach((cert, i) => {
             const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.className = 'cert-card' + (animate ? ' expertise-item-in' : '');
-            if (animate) a.style.animationDelay = Math.min(i * 0.04, 0.6) + 's';
-            a.href = cert.verifyLink;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            a.setAttribute('aria-label', cert.name + ' — ' + vendorLabel(cert.issuer) + ' (verify, opens in a new tab)');
-            a.innerHTML =
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'cert-card' + (animate ? ' expertise-item-in' : '');
+            if (animate) btn.style.animationDelay = Math.min(i * 0.04, 0.6) + 's';
+            btn.setAttribute('aria-label', cert.name + ' — ' + vendorLabel(cert.issuer) + ' (view details)');
+            btn.innerHTML =
                 '<span class="cert-head">' +
                     '<img class="cert-logo' + (cert.isSquareLogo ? ' square-logo' : '') + '" src="' + cert.logo + '" alt="" loading="lazy" width="46" height="46">' +
                     '<span class="cert-issuer">' + escapeHtml(vendorLabel(cert.issuer)) + '</span>' +
                 '</span>' +
                 '<span class="cert-name">' + escapeHtml(cert.name) + '</span>' +
-                '<span class="cert-verify">Verify credential <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>';
-            li.appendChild(a);
+                '<span class="cert-verify">View details <i class="fas fa-chevron-right" aria-hidden="true"></i></span>';
+            btn.addEventListener('click', () => openCertModal(cert));
+            li.appendChild(btn);
             certGrid.appendChild(li);
         });
     }
+
+    function openCertModal(cert) {
+        const m = $('#certModal');
+        if (!m) return;
+        $('#certModalLogo').src = cert.logo;
+        $('#certModalLogo').className = 'cert-modal-logo' + (cert.isSquareLogo ? ' square-logo' : '');
+        $('#certModalIssuer').textContent = vendorLabel(cert.issuer);
+        $('#certModalName').textContent = cert.name;
+        $('#certModalVerify').href = cert.verifyLink;
+        m.hidden = false;
+        document.body.style.overflow = 'hidden';
+    }
+    function closeCertModal() {
+        const m = $('#certModal');
+        if (!m) return;
+        m.hidden = true;
+        document.body.style.overflow = '';
+    }
+    document.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeCertModal));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCertModal(); });
+
+    const certSearch = $('#certSearch');
+    if (certSearch) certSearch.addEventListener('input', () => { certSearchQuery = certSearch.value; renderCerts(true); });
+    const certSortEl = $('#certSort');
+    if (certSortEl) certSortEl.addEventListener('change', () => { certSort = certSortEl.value; renderCerts(true); });
 
     if (certGrid) {
         fetch('certifications.json')
@@ -560,11 +593,11 @@
             })
             .catch(err => {
                 console.error('Error loading certifications:', err);
-                setStat('certs', 19);
+                setStat('certs', 18);
                 setStat('vendors', 7);
             });
     } else {
-        setStat('certs', 19);
+        setStat('certs', 18);
         setStat('vendors', 7);
     }
 

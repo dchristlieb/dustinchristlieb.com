@@ -182,7 +182,7 @@
 
             <div class="container hero-stats" id="heroStats">
                 <div class="stat reveal">
-                    <span class="stat-value"><span class="count" data-stat="certs">19</span></span>
+                    <span class="stat-value"><span class="count" data-stat="certs">18</span></span>
                     <span class="stat-label">Industry certifications</span>
                 </div>
                 <div class="stat reveal">
@@ -318,6 +318,16 @@
                     <p class="section-lead" id="certSummary">A living wall of verified credentials across cloud, security, identity, and endpoint management.</p>
                 </div>
 
+                <div class="cred-toolbar reveal">
+                    <div class="cred-search">
+                        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                        <input type="search" id="certSearch" placeholder="Search certifications…" aria-label="Search certifications">
+                    </div>
+                    <select id="certSort" class="cred-sort" aria-label="Sort certifications">
+                        <option value="vendor">Sort: Vendor</option>
+                        <option value="name">Sort: Name</option>
+                    </select>
+                </div>
                 <div class="vendor-filter reveal" id="vendorFilter" role="group" aria-label="Filter certifications by vendor"></div>
                 <ul class="cert-grid reveal" id="certGrid"></ul>
                 <noscript><p class="noscript-note">Certifications load dynamically — enable JavaScript to browse them, or find them all on <a href="https://www.credly.com/users/dustin-christlieb" target="_blank" rel="noopener noreferrer">Credly</a>.</p></noscript>
@@ -399,6 +409,18 @@
                 <span><kbd class="kbd">↵</kbd> select</span>
                 <span><kbd class="kbd">esc</kbd> close</span>
             </div>
+        </div>
+    </div>
+
+    <!-- ============ CERT DETAIL MODAL ============ -->
+    <div class="cert-modal" id="certModal" hidden>
+        <div class="cert-modal-backdrop" data-close></div>
+        <div class="cert-modal-card" role="dialog" aria-modal="true" aria-labelledby="certModalName">
+            <button class="cert-modal-close" type="button" aria-label="Close" data-close><i class="fas fa-xmark"></i></button>
+            <img class="cert-modal-logo" id="certModalLogo" alt="">
+            <span class="cert-modal-issuer" id="certModalIssuer"></span>
+            <h3 id="certModalName"></h3>
+            <a class="btn btn-primary" id="certModalVerify" target="_blank" rel="noopener noreferrer">Verify credential <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
     </div>
 
